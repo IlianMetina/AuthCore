@@ -20,6 +20,5 @@ public class User {
     @ManyToOne
     @JoinColumn(name = "role_id")
     private Role role;
-    // Changer String pour un ENUM ?
     private boolean enabled;
 }
