@@ -1,5 +1,6 @@
 package com.ilian.authcore.controllers;
 
+import com.ilian.authcore.models.User;
 import com.ilian.authcore.services.UserService;
 import org.springframework.stereotype.Controller;
 
@@ -11,4 +12,5 @@ public class UserController {
     public UserController(UserService userService){
         this.userService = userService;
     }
+
 }
