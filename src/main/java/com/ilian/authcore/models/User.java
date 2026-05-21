@@ -1,5 +1,6 @@
 package com.ilian.authcore.models;
 
+import com.ilian.authcore.validation.StrongPassword;
 import jakarta.persistence.*;
 import lombok.*;
 import org.springframework.security.core.GrantedAuthority;
