@@ -1,5 +1,6 @@
 package com.ilian.authcore.dto;
 
+import com.ilian.authcore.validation.CorrectIban;
 import com.ilian.authcore.validation.FieldsMatch;
 import com.ilian.authcore.validation.StrongPassword;
 import lombok.AllArgsConstructor;

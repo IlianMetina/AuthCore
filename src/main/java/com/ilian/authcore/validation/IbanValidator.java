@@ -5,8 +5,6 @@ import jakarta.validation.ConstraintValidatorContext;
 
 public class IbanValidator implements ConstraintValidator<CorrectIban, String> {
 
-    private String iban;
-
     @Override
     public boolean isValid(String value, ConstraintValidatorContext context) {
         return value.matches("""

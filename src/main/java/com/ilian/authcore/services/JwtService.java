@@ -41,7 +41,7 @@ public class JwtService {
                 .build()
                 .parseSignedClaims(token)
                 .getPayload()
-                .getSubject();
+                .get("email", String.class);
     }
 
     public boolean isTokenValid(String token){

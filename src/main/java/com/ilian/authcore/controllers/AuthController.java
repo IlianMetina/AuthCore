@@ -7,13 +7,13 @@ import com.ilian.authcore.dto.RegisterResponseDto;
 import com.ilian.authcore.services.AuthService;
 import com.ilian.authcore.services.UserService;
 import jakarta.validation.Valid;
-import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
-@Controller
+@RestController
 @RequestMapping("auth")
 public class AuthController {
 
@@ -26,7 +26,7 @@ public class AuthController {
     }
 
     @PostMapping("login")
-    public LoginResponseDto login(@Valid BindingResult result, LoginRequestDto dto){
+    public LoginResponseDto login(@Valid @RequestBody LoginRequestDto dto, BindingResult result){
         if(result.hasErrors()) throw new RuntimeException("Data invalid");
         return authService.login(dto);
     }
