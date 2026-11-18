@@ -20,7 +20,6 @@ public class JwtService {
     private Long jwtExpiration;
     private SecretKey getSigningKey(){
         byte[] keyBytes = Decoders.BASE64.decode(secretKey);
-
         return Keys.hmacShaKeyFor(keyBytes);
     }
 

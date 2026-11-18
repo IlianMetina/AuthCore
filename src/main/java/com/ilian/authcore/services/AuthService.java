@@ -73,7 +73,6 @@ public class AuthService {
         try{
             User user = userRepo.findByEmail(dto.getEmail()).orElseThrow(() -> new RuntimeException("User not found"));
             if(passwordEncoder.matches(dto.getPassword(), user.getPassword())){
-                // Délivrer le token ?
                 String token = jwtService.generateToken(user);
 
                 LoginResponseDto loginDto = new LoginResponseDto();

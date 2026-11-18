@@ -1,10 +1,11 @@
 package com.ilian.authcore.controllers;
 
+import com.ilian.authcore.models.User;
 import com.ilian.authcore.services.UserService;
 import org.springframework.security.access.prepost.PreAuthorize;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @PreAuthorize("hasRole('ADMIN')")
 @RequestMapping("admin")
@@ -22,6 +23,13 @@ public class AdminController {
         return "Test réussi";
     }
 
+    @GetMapping("findAll")
+    public List<User> findAll(){
+        return userService.findAll();
+    }
 
-
+    @GetMapping("findByEmail/{email}")
+    public User findByEmail(@PathVariable String email){
+        return userService.findByEmail(email);
+    }
 }
